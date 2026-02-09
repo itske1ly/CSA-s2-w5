@@ -6,7 +6,7 @@ public class RemoveCatsForwardBug {
         // remove all "cat" in the arrayList.
 
         // Step 0: initialize an ArrayList ["cat", "cat", "dog", "cat", "cat", "fish"]
-        ArrayList<String> animals = new ArrayList<String>();
+        ArrayList<String> animals = new ArrayList<>();
         animals.add("cat");
         animals.add("cat");
         animals.add("dog");
