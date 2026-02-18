@@ -73,6 +73,13 @@ public class StandardAlgorithms {
     // For example: ["app", "banana", "audio", "bear"] -> 2
     public static int firstLetterA(ArrayList<String> arr)
     {
+        int count = 0;
+        for(int i = 0 ; i < arr.size(); i++){
+            if(arr.get(i).substring(0, 1).equals("a")){
+                count++;
+            }
+        }
+        return count;
 
     }
 
@@ -80,6 +87,12 @@ public class StandardAlgorithms {
     // Algorithm 9: Shift or rotate elements left
     // For example: [1,2,3,4,5] -> [2,3,4,5,1]
     public static void shiftLeft(ArrayList<Integer> arr){
+        int first = arr.get(0);
+        for(int i = 0 ; i < arr.size()-1; i++){
+            arr.set(i,arr.get(i+1));
+        }
+        
+        arr.set(arr.size() - 1, first);
        
     }
 
@@ -87,6 +100,12 @@ public class StandardAlgorithms {
     // Algorithm 9.5: Shift or rotate elements right
     // For example: [1,2,3,4,5] -> [5,1,2,3,4]
     public static void shiftRight(ArrayList<Integer> arr){
+        int last = arr.get(arr.size()-1);
+        for(int i = arr.size()-1; i > 0 ; i--){
+            arr.set(i-1 , arr.get(i));
+        }
+
+        arr.set(0, last);
        
     }
 

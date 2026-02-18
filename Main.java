@@ -7,10 +7,10 @@ public class Main {
         //StandardAlgorithmTest.testSearchOne();
         // StandardAlgorithmTest.testAllNegative();
         // StandardAlgorithmTest.testCountConsecutivePairs();
-         StandardAlgorithmTest.testHasDuplicates();
+        // StandardAlgorithmTest.testHasDuplicates();
         // StandardAlgorithmTest.testFirstLetterA();
         // StandardAlgorithmTest.testShiftLeft();
-        // StandardAlgorithmTest.testShiftRight();
+         StandardAlgorithmTest.testShiftRight();
         // StandardAlgorithmTest.testReverse();
 
     }
