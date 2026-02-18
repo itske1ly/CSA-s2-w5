@@ -8,7 +8,12 @@ public class StandardAlgorithms {
 
     // Algorithm 2: Find Average
     public static double findAvg(ArrayList<Integer> arr){
-        
+        int sum = 0 ;
+        for(Integer values : arr){
+            sum += values;
+        }
+        double average = (double)sum / arr.size();
+        return average;
     }
 
     // Algorithm 3: mode of elements
@@ -20,7 +25,13 @@ public class StandardAlgorithms {
     // This method will return the index of the
     // first element found in the array that is an even number
     public static int searchOne(ArrayList<Integer> arr){
-       
+
+        for(int i = 0; i < arr.size(); i++){
+            if (arr.get(i) % 2 == 0) {
+                return i;
+            }
+        }
+        return -1;
     }
 
 
@@ -43,7 +54,16 @@ public class StandardAlgorithms {
     // This method returns ture if the if there are duplicated elements
     // for example: [1,2,3,1] -> true, 1 is duplicated
     public static boolean hasDuplicates(ArrayList<Integer> arr){
-       
+       for(int i = 0; i < arr.size()-1; i++){
+        int value = arr.get(i);
+        
+        for(int j = i + 1; j < arr.size(); j++){
+            if(arr.get(j).equals(value)){
+                return true;
+            }
+        }
+       }
+       return false;
     }
 
     // Algorithm 8: Determine the number of elements meeting specific criteria
