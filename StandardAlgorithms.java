@@ -3,6 +3,13 @@ import java.util.ArrayList;
 public class StandardAlgorithms {
     // Algorithm 1: Find Min (Same thing for Max)
     public static int findMin(ArrayList<Integer> arr){
+        int smallest = arr.get(0);
+        for(int i = 0; i < arr.size()-1; i++){
+            if(arr.get(i) < smallest){
+                smallest = arr.get(i);
+            }
+        }
+        return smallest;
        
     }
 
@@ -18,6 +25,23 @@ public class StandardAlgorithms {
 
     // Algorithm 3: mode of elements
     public static int findMode(ArrayList<Integer> arr){
+        int number = arr.get(0);
+        int maxCount = 0;
+        for(int i = 0; i < arr.size()-1; i++){
+            int count = 0;
+            for(int j = i+1; j < arr.size(); j++){
+                if(arr.get(j)==arr.get(i)){
+                    count++;
+                }
+            }
+
+            if(count > maxCount){
+                maxCount= count;
+                number = arr.get(i);
+            }
+
+        }
+        return number;
        
     }
 
@@ -38,6 +62,12 @@ public class StandardAlgorithms {
     // Algorithm 5: Determine if all elements have a particular property
     // This method returns true if all elements are negative
     public static boolean allNegative(ArrayList<Integer> arr){
+        for(int i= 0; i<arr.size(); i++){
+            if(arr.get(i) >= 0){
+                return false;
+            }
+        }
+        return true;
    
     }
 
@@ -46,6 +76,13 @@ public class StandardAlgorithms {
     // This method returns the number of consecutive pairs
     // For example: [2,3,3,1,1,3,2,2] has three consecutive pairs
     public static int countConsecutivePairs(ArrayList<Integer> arr){
+        int count = 0;
+        for(int i = 0; i < arr.size()-1; i++){
+            if(arr.get(i)==arr.get(i+1)){
+                    count++;
+                }
+        }
+        return count;
        
     }
 
@@ -102,7 +139,7 @@ public class StandardAlgorithms {
     public static void shiftRight(ArrayList<Integer> arr){
         int last = arr.get(arr.size()-1);
         for(int i = arr.size()-1; i > 0 ; i--){
-            arr.set(i-1 , arr.get(i));
+            arr.set(i , arr.get(i-1));
         }
 
         arr.set(0, last);
@@ -114,6 +151,17 @@ public class StandardAlgorithms {
     // Algorithm 10: Reverse the order of the elements
     // For example: ["a", "b", "c", "d"] -> ["d", "c", "b", "a"]
     public static void reverse(ArrayList<String> arr){
+
+        for(int i = 0 ; i < arr.size()/2; i++){
+            String first = arr.get(i);
+            String last = arr.get(arr.size()- 1 -i);
+            String mid = first;
+
+            arr.set(i,last);
+            arr.set(arr.size()-1-i, mid);
+
+
+        }
         
     }
 }
